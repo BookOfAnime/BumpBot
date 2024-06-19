@@ -4,12 +4,15 @@ body {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  background-color: #121212; /* Background color for consistency */
+  background: linear-gradient(135deg, #9945FF, #14F195);
+  background-size: 200% 200%;
+  animation: gradientBG 15s ease infinite;
   color: #ffffff; /* White text */
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 * {
@@ -17,9 +20,30 @@ a {
 }
 
 .btn {
-  background-color: #28a745; /* Green color for buttons */
-  color: #fff;
+  background-color: #14F195; /* Solana green */
+  color: #121212; /* Dark background */
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
+}
+
+@keyframes gradientBG {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
 }

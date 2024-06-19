@@ -1,16 +1,15 @@
 /* Ensure the hero section covers the full viewport height and centers its content */
 #hero {
-    background: linear-gradient(135deg, #9945FF, #14F195);
-    background-size: 200% 200%;
-    animation: gradientBG 15s ease infinite;
     color: #fff;
     padding: 50px 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Ensure it takes at least full viewport height */
     text-align: center;
     overflow: hidden;
+    position: relative;
 }
 
 .hero-overlay {
@@ -104,11 +103,76 @@
     border-radius: 5px;
     font-size: 1em;
     transition: background-color 0.3s ease;
-    margin: 10px;
 }
 
 .hero-content .btn-primary:hover {
     background-color: #12d485;
+}
+
+/* New Features Section within Hero */
+.hero-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.feature-item {
+    background: rgba(30, 30, 30, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    cursor: pointer;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.feature-item:hover {
+    transform: scale(1.05);
+    background: rgba(20, 20, 20, 0.9);
+}
+
+.feature-icon-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.feature-item-icon {
+    width: 80px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature-item:hover .feature-icon-container {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.feature-item:hover .feature-item-icon {
+    transform: rotate(10deg);
+}
+
+.feature-item-title {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.feature-item-description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #e0e0e0;
 }
 
 /* Media Queries for Responsiveness */
@@ -122,21 +186,24 @@
     .hero-content .feature {
         margin-bottom: 0;
     }
+
+    .hero-features {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-item {
+        width: 100%;
+    }
 }
 
 /* Keyframes for custom animations */
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -165,5 +232,17 @@
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }

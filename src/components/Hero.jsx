@@ -12,21 +12,20 @@ const Hero = () => {
                     <h2 className="animate__animated animate__fadeInUp">The Fastest Bump Bot On the Planet!</h2>
                     <div className="features">
                         <div className="feature animate__animated animate__fadeInLeft">
-                            <h3>First:</h3>
-                            <p style={{paddingTop:"10px"}}>Appear at the top of Pump.fun token list and always on the first page.</p>
+                            <h3>Reliable:</h3>
+                            <p style={{paddingTop:"10px"}}>Never leave the front page of Pump.Fun</p>
                         </div>
                         <div className="feature animate__animated animate__fadeInRight">
                             <h3>
-                                Win:
-                                
+                                Rapid
                             </h3>
-                            <p>Trends your token on Photon across all time spans. Leave your competition in the dust.</p>
+                            <p>Control the speed and volume of your bot.</p>
                         </div>
                     </div>
                     <div className="cta animate__animated animate__fadeInUp">
                         <p>Sign up now and start bumping!</p>
                         <br />
-                        <a href="#register" className="btn-primary">Register</a>
+                        <a href="#register" className="btn-primary">Join!</a>
                     </div>
                 </div>
             </div>

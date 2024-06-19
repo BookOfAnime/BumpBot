@@ -1,0 +1,100 @@
+#contact-section {
+    color: #ffffff;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh; /* Ensure it takes at least half viewport height */
+    text-align: center;
+}
+
+.contact-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px 20px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.form-group {
+    margin-bottom: 1.5em;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #14F195;
+    outline: none;
+}
+
+.error {
+    color: #ff4d4d;
+    margin-top: 0.5em;
+}
+
+.success-message {
+    color: #14F195;
+    font-size: 1.2em;
+}
+
+.btn-primary {
+    background-color: #14F195;
+    color: #121212;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #12d485;
+}
+
+/* Keyframes for custom animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
