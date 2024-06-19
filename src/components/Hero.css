@@ -11,7 +11,6 @@
     min-height: 100vh; /* Ensure it takes at least full viewport height */
     text-align: center;
     overflow: hidden;
-    position: relative;
 }
 
 .hero-overlay {
@@ -22,7 +21,17 @@
     background: rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    box-shadow: 0 0 20px #28a745, 0 0 30px #28a745, 0 0 40px #28a745, 0 0 50px #28a745;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px #14F195, 0 0 20px #14F195, 0 0 30px #14F195, 0 0 40px #14F195;
+    }
+    to {
+        box-shadow: 0 0 20px #14F195, 0 0 30px #14F195, 0 0 40px #14F195, 0 0 50px #14F195;
+    }
 }
 
 .hero-content {
@@ -54,19 +63,20 @@
 
 .hero-content .features {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
     margin: 2em 0;
-    width: 100%;
 }
 
 .hero-content .feature {
     background-color: #262626;
     padding: 20px;
     border-radius: 10px;
-    width: 45%;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
     text-align: left;
     display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 20px;
     animation: fadeIn 1.6s ease-in-out;
@@ -104,21 +114,12 @@
 @media (min-width: 768px) {
     .hero-content .features {
         flex-direction: row;
+        justify-content: center;
+        gap: 20px;
     }
 
     .hero-content .feature {
-        width: 45%;
-    }
-}
-
-@media (max-width: 767px) {
-    .hero-content .features {
-        flex-direction: column;
-    }
-
-    .hero-content .feature {
-        width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 0;
     }
 }
 
