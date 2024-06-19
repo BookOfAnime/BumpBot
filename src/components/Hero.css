@@ -1,0 +1,167 @@
+/* Ensure the hero section covers the full viewport height and centers its content */
+#hero {
+    background: linear-gradient(135deg, #9945FF, #14F195);
+    background-size: 200% 200%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure it takes at least full viewport height */
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-overlay {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-content .version {
+    font-size: 1.2em;
+    color: #ccc;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.hero-content h2 {
+    font-size: 2em;
+    margin: 1em 0;
+    animation: fadeInUp 1.4s ease-in-out;
+}
+
+.hero-content p {
+    margin: 0.5em 0;
+}
+
+.hero-content .features {
+    display: flex;
+    justify-content: space-around;
+    margin: 2em 0;
+    width: 100%;
+}
+
+.hero-content .feature {
+    background-color: #262626;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    animation: fadeIn 1.6s ease-in-out;
+}
+
+.hero-content .feature-icon {
+    width: 50px;
+}
+
+.hero-content h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.hero-content .cta {
+    margin-top: 2em;
+    animation: fadeInUp 1.8s ease-in-out;
+}
+
+.hero-content .btn-primary {
+    background-color: #14F195;
+    color: #121212;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.hero-content .btn-primary:hover {
+    background-color: #12d485;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .hero-content .features {
+        flex-direction: row;
+    }
+
+    .hero-content .feature {
+        width: 45%;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-content .features {
+        flex-direction: column;
+    }
+
+    .hero-content .feature {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Keyframes for custom animations */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
